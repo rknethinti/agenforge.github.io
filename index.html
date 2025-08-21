@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgenForge — Gamified DevOps Learning</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description" content="AgenForge offers gamified learning solutions for DevOps skills. Master Git, Docker, Kubernetes, Terraform, CI/CD, and more through interactive games at just ₹299/month or ₹3000/year." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AgenForge — Gamified DevOps Learning" />
+  <meta property="og:description" content="Learn all DevOps skills with interactive games. Only ₹299/month or ₹3000/year." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://agenforge.com" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #06080f;
+      --text: #e5e7eb;
+      --muted: #9aa3b2;
+      --primary: #6ee7f5;
+      --accent: #a78bfa;
+      --brand: #00e0b8;
+      --card: rgba(255,255,255,0.06);
+      --glass: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(46, 16, 101, 0.6), transparent 60%),
+                  radial-gradient(1000px 500px at 110% 10%, rgba(0, 156, 214, 0.45), transparent 50%),
+                  radial-gradient(1000px 500px at 50% 110%, rgba(0, 224, 184, 0.35), transparent 55%),
+                  var(--bg);
+      background-attachment: fixed;
+    }
+    .container { width: min(1200px, 92%); margin-inline: auto; }
+    .grid { display: grid; gap: 1.25rem; }
+    .center { display: grid; place-items: center; }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); background: rgba(6,8,15,.82); border-bottom: 1px solid var(--border);}
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 0; }
+    .brand { display: flex; align-items: center; gap: .75rem; font-weight: 700; }
+    .brand .logo { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; background: conic-gradient(from 120deg, #111, #222); }
+    .brand span { font-family: "Space Grotesk"; font-size: 1.05rem; }
+    .nav-links { display: flex; gap: 1rem; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-weight: 500; padding: .5rem .75rem; border-radius: 10px; }
+    .nav-links a:hover { color: var(--text); background: var(--glass); }
+    .cta { background: linear-gradient(135deg, var(--brand), var(--accent)); color: #06101a; font-weight: 800; padding: .6rem 1rem; border-radius: 12px; cursor: pointer; border: none; }
+    .cta:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+    /* Hero */
+    .hero { padding: 6rem 0 4rem; text-align: center; }
+    .hero h1 { font-family: "Space Grotesk"; font-size: clamp(2.2rem, 6vw, 4rem); margin: .8rem 0; }
+    .hero p { color: var(--muted); font-size: clamp(1rem, 2.2vw, 1.2rem); max-width: 750px; margin-inline: auto; }
+    .hero-actions { display: flex; justify-content: center; gap: 1rem; margin-top: 1.2rem; flex-wrap: wrap; }
+
+    /* Sections */
+    .section { padding: 4rem 0; }
+    .title { font-family: "Space Grotesk"; font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: .6rem; text-align: center; }
+    .lead { color: var(--muted); max-width: 900px; margin: 0 auto 2rem; text-align: center; }
+
+    /* Cards */
+    .cards { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 1.2rem; transition: .2s; text-align: center; }
+    .card:hover { transform: translateY(-5px); border-color: var(--accent); }
+    .card h3 { margin-bottom: .5rem; }
+
+    /* Pricing */
+    .pricing { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
+    .price-box { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; text-align: center; width: 260px; }
+    .price { font-size: 2rem; font-weight: 800; color: var(--brand); margin: 1rem 0; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border); padding: 2rem 0; text-align: center; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="logo"><img src="agenforge-logo.svg" alt="AgenForge" width="28"></div>
+        <span>AgenForge</span>
+      </div>
+      <div class="nav-links">
+        <a href="#skills">Skills</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#why">Why Us</a>
+        <button class="cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Start Learning</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="container">
+      <h1>Gamified DevOps Learning</h1>
+      <p>Learn Git, Docker, Kubernetes, Terraform, CI/CD, and more — through interactive games. Upgrade your DevOps skills while having fun!</p>
+      <div class="hero-actions">
+        <button class="cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Join Now – ₹299/month</button>
+        <a href="#skills" class="btn">Explore Skills</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Skills -->
+  <section class="section" id="skills">
+    <h2 class="title">DevOps Skills You’ll Master</h2>
+    <p class="lead">Each skill is taught through challenges, quests, and games designed for real-world scenarios.</p>
+    <div class="container grid cards">
+      <div class="card"><h3>🎮 Git Battles</h3><p>Learn Git & GitHub through coding duels and branching quests.</p></div>
+      <div class="card"><h3>🐳 Docker Quest</h3><p>Explore containers and images by solving puzzles and levels.</p></div>
+      <div class="card"><h3>☸️ K8s Arena</h3><p>Fight cluster chaos and master Kubernetes deployments.</p></div>
+      <div class="card"><h3>⚙️ Terraform Builder</h3><p>Build infra with IaC blueprints and unlock achievements.</p></div>
+      <div class="card"><h3>🚀 CI/CD Run</h3><p>Automate pipelines and race against time in CI/CD challenges.</p></div>
+      <div class="card"><h3>📊 Monitoring Master</h3><p>Defend uptime with Prometheus & Grafana dashboards.</p></div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <h2 class="title">Simple & Affordable Pricing</h2>
+    <p class="lead">Start your gamified DevOps journey at less than the cost of a coffee per day.</p>
+    <div class="pricing">
+      <div class="price-box">
+        <h3>Monthly</h3>
+        <div class="price">₹299</div>
+        <p>per month</p>
+        <button class="cta">Start Monthly</button>
+      </div>
+      <div class="price-box">
+        <h3>Yearly</h3>
+        <div class="price">₹3000</div>
+        <p>per year (Save 15%)</p>
+        <button class="cta">Start Yearly</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section class="section" id="why">
+    <h2 class="title">Why Choose AgenForge?</h2>
+    <div class="container grid cards">
+      <div class="card"><h3>🎮 Gamified Learning</h3><p>Fun & engaging quests make learning DevOps addictive.</p></div>
+      <div class="card"><h3>💡 Real-World Skills</h3><p>Hands-on challenges designed for real DevOps roles.</p></div>
+      <div class="card"><h3>💸 Affordable</h3><p>Just ₹299/month — accessible to every learner.</p></div>
+      <div class="card"><h3>🚀 Career Growth</h3><p>From fresher to pro — level up step by step with confidence.</p></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© <span id="year"></span> AgenForge — Gamified DevOps Learning Made Easy</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 600 });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
